@@ -1,0 +1,30 @@
+# Ignore compiled Java class files
+*.class
+**/*.class
+
+# Build and output directories
+/bin/
+/out/
+/build/
+/target/
+
+# IDE and editor files
+*.iml
+.idea/
+.vscode/
+*.class
+.classpath
+.project
+.settings/
+
+# Maven/Gradle
+.mvn/
+.gradle/
+
+# Logs and temp files
+*.log
+*.tmp
+
+# OS files
+.DS_Store
+Thumbs.db
