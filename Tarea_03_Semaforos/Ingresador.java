@@ -50,7 +50,10 @@ public class Ingresador extends Thread {
 
     @Override
     public void run() {
-        while (true) {
+        // while (true) {
+        //     ingresar();
+        // }
+        for (int i = 0; i < 3; i++) {  // Cambiado de while(true) a for con 3 iteraciones
             ingresar();
         }
     }

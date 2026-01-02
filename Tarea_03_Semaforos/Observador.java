@@ -32,7 +32,10 @@ public class Observador extends Thread {
 
     @Override
     public void run() {
-        while (true) {
+        // while (true) {
+        //     observar();
+        // }
+        for (int i = 0; i < 3; i++) {  // Cambiado de while(true) a for con 3 iteraciones
             observar();
         }
     }

@@ -61,7 +61,10 @@ public class Retirador extends Thread {
 
     @Override
     public void run() {
-        while (true) {
+        // while (true) {
+        //     retirar();
+        // }
+        for (int i = 0; i < 3; i++) {  // Cambiado de while(true) a for con 3 iteraciones
             retirar();
         }
     }
