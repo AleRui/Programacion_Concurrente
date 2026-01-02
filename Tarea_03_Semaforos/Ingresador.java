@@ -4,7 +4,11 @@ import java.util.Random;
 
 public class Ingresador extends Thread {
 
+    private static int contador_ingresadores = 0;
+    private int id_ingresador;
+
     public Ingresador() {
+        id_ingresador = ++contador_ingresadores;
         start();
     }
 
@@ -29,9 +33,9 @@ public class Ingresador extends Thread {
             double saldo_nuevo = saldo_anterior + cantidad_a_ingresar;
             CuentaBancariaBuffer.setSaldo(saldo_nuevo);
             
-            System.out.println("Ingresador: Ingresando €" + String.format("%.2f", cantidad_a_ingresar) + 
-                             " | Saldo anterior: €" + String.format("%.2f", saldo_anterior) +
-                             " | Saldo nuevo: €" + String.format("%.2f", saldo_nuevo));
+            System.out.println("Ingresador " + id_ingresador + ": Ingresando " + String.format("%.2f", cantidad_a_ingresar) + "€" + 
+                             " | Saldo anterior: " + String.format("%.2f", saldo_anterior) + "€" +
+                             " | Saldo nuevo: " + String.format("%.2f", saldo_nuevo) + "€");
             
             // Liberar acceso exclusivo
             CuentaBancariaBuffer.getAccesoExclusivo().release();

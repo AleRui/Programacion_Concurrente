@@ -3,8 +3,12 @@ package Tarea_03_Semaforos;
 import java.util.Random;
 
 public class Retirador extends Thread {
+
+    private static int contador_retiradores = 0;
+    private int id_retirador;
     
     public Retirador() {
+        id_retirador = ++contador_retiradores;
         start();
     }
 
@@ -38,9 +42,9 @@ public class Retirador extends Thread {
             double saldo_nuevo = saldo_anterior - cantidad_a_retirar;
             CuentaBancariaBuffer.setSaldo(saldo_nuevo);
             
-            System.out.println("Retirador: Retirando €" + String.format("%.2f", cantidad_a_retirar) + 
-                             " | Saldo anterior: €" + String.format("%.2f", saldo_anterior) +
-                             " | Saldo nuevo: €" + String.format("%.2f", saldo_nuevo));
+            System.out.println("Retirador " + id_retirador + ": Retirando " + String.format("%.2f", cantidad_a_retirar) + "€" + 
+                             " | Saldo anterior: " + String.format("%.2f", saldo_anterior) + "€" +
+                             " | Saldo nuevo: " + String.format("%.2f", saldo_nuevo) + "€");
             
             // Liberar acceso exclusivo
             CuentaBancariaBuffer.getAccesoExclusivo().release();

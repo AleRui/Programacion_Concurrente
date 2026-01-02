@@ -2,7 +2,11 @@ package Tarea_03_Semaforos;
 
 public class Observador extends Thread {
 
+    private static int contador_observadores = 0;
+    private int id_observador;
+
     public Observador() {
+        id_observador = ++contador_observadores;
         start();
     }
 
@@ -13,7 +17,7 @@ public class Observador extends Thread {
             
             double saldo_actual = CuentaBancariaBuffer.getSaldo();
             
-            System.out.println("Observador: Saldo actual: €" + String.format("%.2f", saldo_actual));
+            System.out.println("Observador " + id_observador + ": Saldo actual: " + String.format("%.2f", saldo_actual) + "€");
             
             // Liberar acceso exclusivo
             CuentaBancariaBuffer.getAccesoExclusivo().release();
