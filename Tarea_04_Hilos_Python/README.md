@@ -169,11 +169,3 @@ hilo_division = OperadorHilo("DIVISIÓN", cola_division, dividir)
 ```
 
 3. Añade la cola a `colas_destino` e inicia el hilo.
-
-## 👨‍💻 Autor
-
-Proyecto desarrollado como parte del Grado en Diseño de Software - España
-
-## 📝 Licencia
-
-Proyecto educativo - Uso libre para fines académicos
